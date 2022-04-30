@@ -6,14 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:backgroundTint="@color/blueGreen"
-    android:background="@color/blueGreen">
+    >
 
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_baseline_add_box_24"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/clg"
         android:layout_centerInParent="true"
        />
 

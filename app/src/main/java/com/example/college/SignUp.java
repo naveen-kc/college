@@ -62,13 +62,14 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Please fill all the forms",Toast.LENGTH_SHORT);
 
         }
-        else  if(password.getText().toString()!= confirm.getText().toString()){
+        else  if(!password.getText().toString().equals(confirm.getText().toString())){
+            Log.i("Response",password.getText().toString() +confirm.getText().toString());
             Toast.makeText(getApplicationContext(),"Confirm password not matching.!",Toast.LENGTH_SHORT);
 
         }
         else {
 
-            String url = "https://7187-115-242-147-90.in.ngrok.io/createProfile";
+            String url = "https://b3f4-115-242-147-90.in.ngrok.io/createProfile";
             RequestQueue requestQueue = Volley.newRequestQueue(SignUp.this);
 
             HashMap<String, String> postData = new HashMap<String, String>();
@@ -77,6 +78,8 @@ public class SignUp extends AppCompatActivity {
             postData.put("Age", age.getText().toString());
             postData.put("Contact", name.getText().toString());
             postData.put("password", name.getText().toString());
+
+            Log.i("Response",password.getText().toString());
 
 
 
@@ -87,21 +90,16 @@ public class SignUp extends AppCompatActivity {
                     try {
                         JSONObject json = new JSONObject(response.toString());
                         Log.i("Response",response.toString());
-
-                        JSONArray jsonArray = (JSONArray) json.get("result");
-
-                        Log.i("Response",jsonArray.toString());
-
-                        for (int i = 0, len = jsonArray.length(); i < len; i++) {
-                            JSONObject data = jsonArray.getJSONObject(i);
-
-                            Log.i("Response",data.toString());
-
-                           /* if(pass.equals(password.getText().toString())){
+                        String message = json.getString("message");
 
 
 
+                        Log.i("Response",json.toString() + message);
 
+
+                          //  Log.i("Response",data.toString());
+
+                            if(message.equals("successfully Created Profile")){
                                 storageHelper.putUserFName(name.getText().toString());
                                 storageHelper.putUserLName(lname.getText().toString());
                                 storageHelper.putUserAge(age.getText().toString());
@@ -111,9 +109,9 @@ public class SignUp extends AppCompatActivity {
                                 startActivity(intent);
                             }
                             else {
-                                Toast.makeText(getApplicationContext(),"Incorrect password",Toast.LENGTH_SHORT);
-                            }*/
-                        }
+                                Toast.makeText(getApplicationContext(),"Try after sometimes",Toast.LENGTH_SHORT);
+                            }
+
 
                     } catch (Exception e) {
                         e.printStackTrace();
