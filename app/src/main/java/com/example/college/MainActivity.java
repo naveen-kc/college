@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     void callLoginApi(){
 
-            String url = "https://b3f4-115-242-147-90.in.ngrok.io/Login";
+        String url = Const.URL+"Login";
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
 
         HashMap<String, String> postData = new HashMap<String, String>();
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                         else {
-                            Toast.makeText(getApplicationContext(),"Incorrect password",Toast.LENGTH_SHORT);
+                            Toast.makeText(getApplicationContext(),"Incorrect password",Toast.LENGTH_SHORT).show();
                         }
                     }
 

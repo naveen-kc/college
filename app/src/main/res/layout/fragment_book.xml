@@ -1,24 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BookFragment"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!--
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/progressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:lottie_autoPlay="true"
+                android:lottie_loop="true"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_rawRes="@raw/loader" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    -->
+
+    <!--text view for heading-->
+    <TextView
+        android:id="@+id/idTVHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="Book Your Appointment"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <!--edit text for user name-->
 
     <TextView
-        android:id="@+id/bookFragmentt"
-        android:layout_width="wrap_content"
+        android:id="@+id/nameText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Booking"
-        android:textColor="#43a047"
-        android:textSize="40sp"
-        android:textStyle="italic|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/idTVHeader"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/idEdtName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/nameText"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Ex: Naveen"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+    <!--edit text for user password-->
+
+    <TextView
+        android:id="@+id/lnameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idEdtName"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Last Name"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/idLname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/lnameText"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Enter Last Name"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/mobileText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idLname"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Contact"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/idEdtMobile"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/mobileText"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Enter Mobile Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/ageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idEdtMobile"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Age"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/idEdtAge"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/ageText"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Enter Age"
+            android:inputType="number"
+            android:maxLength="2"
+            android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idEdtAge"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Date"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/idEdtDate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/dateText"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Select Date"
+            android:textAlignment="center"
+            android:focusable="false"/>
+
+        <TextView
+            android:id="@+id/dateDept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idEdtDate"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Department"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/dateDept"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:hint="Select Department"
+            android:spinnerMode="dialog"
+            android:textAlignment="center" />
+
+
+
+    <TextView
+        android:id="@+id/whomMeet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Whom To Meet"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/idEdtWhom"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/whomMeet"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Ex: Prathik"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/textPusrpose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idEdtWhom"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Purpose"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/idEdtPurpose"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/textPusrpose"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Ex: To meet HOD"
+            android:inputType="text"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/textType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idEdtPurpose"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="User Type"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/idEdtType"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/textType"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/border"
+            android:hint="Ex: Alumni"
+            android:inputType="text"
+            android:textAlignment="center" />
+
+
+
+
+    <!--button to register our new user-->
+        <Button
+            android:id="@+id/idBtnBook"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/idEdtType"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/blueGreen"
+            android:text="Book Now"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout >

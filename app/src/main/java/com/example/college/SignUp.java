@@ -59,25 +59,27 @@ public class SignUp extends AppCompatActivity {
 
     public  void signUp(){
         if(name.getText().toString().isEmpty()||lname.getText().toString().isEmpty()||password.getText().toString().isEmpty()||age.getText().toString().isEmpty()||mobile.getText().toString().isEmpty()){
-            Toast.makeText(getApplicationContext(),"Please fill all the forms",Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(),"Please fill all the forms",Toast.LENGTH_SHORT).show();
 
         }
         else  if(!password.getText().toString().equals(confirm.getText().toString())){
             Log.i("Response",password.getText().toString() +confirm.getText().toString());
-            Toast.makeText(getApplicationContext(),"Confirm password not matching.!",Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(),"Confirm password not matching.!",Toast.LENGTH_SHORT).show();
 
         }
         else {
 
-            String url = "https://b3f4-115-242-147-90.in.ngrok.io/createProfile";
+
+            String url = Const.URL+"createProfile";
             RequestQueue requestQueue = Volley.newRequestQueue(SignUp.this);
 
             HashMap<String, String> postData = new HashMap<String, String>();
             postData.put("LastName",lname.getText().toString());
             postData.put("FirstName", name.getText().toString());
             postData.put("Age", age.getText().toString());
-            postData.put("Contact", name.getText().toString());
-            postData.put("password", name.getText().toString());
+            postData.put("Contact", mobile.getText().toString());
+            postData.put("password", password.getText().toString());
+
 
             Log.i("Response",password.getText().toString());
 
@@ -109,7 +111,7 @@ public class SignUp extends AppCompatActivity {
                                 startActivity(intent);
                             }
                             else {
-                                Toast.makeText(getApplicationContext(),"Try after sometimes",Toast.LENGTH_SHORT);
+                                Toast.makeText(getApplicationContext(),"Try after sometimes",Toast.LENGTH_SHORT).show();
                             }
 
 
