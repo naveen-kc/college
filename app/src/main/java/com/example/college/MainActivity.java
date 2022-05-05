@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     EditText userId,password ;
-    Button signIn,visitor;
+    Button signIn,admin;
     StorageHelper storageHelper;
     TextView create;
     String pass;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         userId=findViewById(R.id.idEdtUserName);
         password = findViewById(R.id.idEdtPassword);
         signIn=findViewById(R.id.idBtnLogin);
-        //visitor=findViewById(R.id.idVisitor);
+        admin=findViewById(R.id.idAdmin);
         create =findViewById(R.id.create);
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
                     callLoginApi();
                     //Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),SelectDept.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
             }
         });
 

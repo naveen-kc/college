@@ -19,52 +19,55 @@
 
 
     <TextView
-        android:id="@+id/header"
+        android:id="@+id/idTVHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/splash"
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:padding="5dp"
-        android:text="Admin Login"
+        android:text="Select Your Department"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="24sp" />
-
-
-    <EditText
-        android:id="@+id/idEdtUserName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Enter Username" />
-
-    <!--edit text for user password-->
-    <EditText
-        android:id="@+id/idEdtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idEdtUserName"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Enter Password"
-        android:inputType="textPassword" />
+        android:textSize="24sp"
+        android:layout_below="@+id/splash"/>
 
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/faculty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/idEdtPassword"
+        android:layout_below="@+id/idTVHeader"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/blueGreen"
+        android:text="Faculty"
+        android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/office"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/blueGreen"
-        android:text="Login"
+        android:text="Office"
+        android:layout_below="@+id/faculty"
+        android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/hostel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/blueGreen"
+        android:text="Hostel"
+        android:layout_below="@+id/office"
         android:textAllCaps="false" />
 
 

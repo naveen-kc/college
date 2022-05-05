@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blueGreen">#75E6DA</color>
     <color name="blue">#189AB4</color>
+    <color name="red">#E0115F</color>
+    <color name="green">#50C878</color>
+    <color name="platinum">	#E5E4E2</color>
 </resources>
