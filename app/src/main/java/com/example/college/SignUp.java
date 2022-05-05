@@ -109,6 +109,7 @@ public class SignUp extends AppCompatActivity {
                                 storageHelper.putPassword(password.getText().toString());
                                 Intent intent = new Intent(getApplicationContext(),Home.class);
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
                             }
                             else {
                                 Toast.makeText(getApplicationContext(),"Try after sometimes",Toast.LENGTH_SHORT).show();

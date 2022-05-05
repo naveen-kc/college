@@ -32,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
                 // Do something after 5s = 5000ms
                checkSession();
             }
-        }, 3000);
+        }, 2000);
     }
 
 

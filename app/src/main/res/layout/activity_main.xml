@@ -111,8 +111,8 @@
 -->
 
 
-   <!-- <Button
-        android:id="@+id/idVisitor"
+    <Button
+        android:id="@+id/idAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/noAcc"
@@ -120,8 +120,8 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/blueGreen"
-        android:text="Continue as Visitor"
+        android:text="Login As Admin"
         android:textAllCaps="false" />
--->
+
 
 </RelativeLayout>

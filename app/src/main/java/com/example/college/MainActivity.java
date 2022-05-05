@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                             storageHelper.putPassword(data.getString("password"));
                             Intent intent = new Intent(MainActivity.this,Home.class);
                             startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
                         }
                         else {
                             Toast.makeText(getApplicationContext(),"Incorrect password",Toast.LENGTH_SHORT).show();
