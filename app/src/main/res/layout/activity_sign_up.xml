@@ -33,7 +33,7 @@
         android:id="@+id/idTVHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
         android:padding="5dp"
         android:text="Create profile"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVHeader"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="10dp"
         android:hint="Enter First Name"
         android:inputType="textPersonName" />
@@ -126,7 +126,8 @@
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/blueGreen"
         android:text="Create"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:background="@drawable/button"/>
 
 
 

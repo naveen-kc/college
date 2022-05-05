@@ -9,10 +9,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+       >
 
     <!--
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -76,17 +78,17 @@
 
     <!--edit text for user password-->
 
-    <TextView
-        android:id="@+id/lnameText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/idEdtName"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="Last Name"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/lnameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idEdtName"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Last Name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
 
         <EditText
@@ -101,6 +103,7 @@
             android:inputType="textPersonName"
             android:textAlignment="center" />
 
+<!--
 
     <TextView
         android:id="@+id/mobileText"
@@ -125,14 +128,16 @@
             android:hint="Enter Mobile Number"
             android:inputType="number"
             android:maxLength="10"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            />
+-->
 
 
     <TextView
         android:id="@+id/ageText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/idEdtMobile"
+        android:layout_below="@+id/idLname"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:text="Age"
@@ -199,13 +204,17 @@
             android:layout_height="40dp"
             android:layout_below="@id/dateDept"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
+
             android:background="@drawable/border"
             android:hint="Select Department"
             android:spinnerMode="dialog"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:textSize="?attr/actionBarSize"
+            android:dropDownWidth="200dp"
+            />
 
 
 
@@ -295,13 +304,15 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_below="@+id/idEdtType"
-            android:layout_alignParentBottom="true"
+
             android:layout_marginStart="10dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="10dp"
+            android:background="@drawable/button"
             android:backgroundTint="@color/blueGreen"
             android:text="Book Now"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:layout_marginBottom="15dp"/>
 
     </RelativeLayout>
     </ScrollView>

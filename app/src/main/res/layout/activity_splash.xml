@@ -14,6 +14,7 @@
         android:layout_height="150dp"
         android:src="@drawable/clg"
         android:layout_centerInParent="true"
+        android:id="@+id/splash"
        />
 
 </RelativeLayout>

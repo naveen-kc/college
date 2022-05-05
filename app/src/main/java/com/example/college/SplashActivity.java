@@ -6,15 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class SplashActivity extends AppCompatActivity {
     StorageHelper storageHelper;
+    ImageView image;
+    Animation scale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         storageHelper = new StorageHelper(getApplicationContext());
+        image = findViewById(R.id.splash);
+        this.scale = AnimationUtils.loadAnimation(this, R.anim.scale);
+        this.image.setAnimation(this.scale);
 
 
         final Handler handler = new Handler();
@@ -24,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
                 // Do something after 5s = 5000ms
                checkSession();
             }
-        }, 1000);
+        }, 3000);
     }
 
 

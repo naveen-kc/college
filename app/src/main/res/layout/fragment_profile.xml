@@ -16,12 +16,13 @@
         android:text="Profile"
         android:textColor="@color/blue"
         android:textSize="40sp"
-        android:textStyle="italic|bold"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25dp"/>
 
 
     <ImageView
@@ -43,7 +44,7 @@
         android:text="Name"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:textStyle="italic|bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,7 +61,6 @@
         android:text="Naveen"
         android:textColor="@color/blueGreen"
         android:textSize="35sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -73,16 +73,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/userName"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:text=" Mobile Number"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:textStyle="italic|bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/userMobile"
@@ -93,7 +93,7 @@
         android:text="9482759828"
         android:textColor="@color/blueGreen"
         android:textSize="40sp"
-        android:textStyle="italic"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -107,16 +107,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/userMobile"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:text="Age"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:textStyle="italic|bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/userAge"
@@ -127,7 +127,6 @@
         android:text="24"
         android:textColor="@color/blueGreen"
         android:textSize="40sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

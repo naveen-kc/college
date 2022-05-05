@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/idEdtUserName"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:hint="Enter Password"
         android:inputType="textPassword" />
@@ -51,8 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/idEdtPassword"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="10dp"
+        android:background="@drawable/button"
         android:backgroundTint="@color/blueGreen"
         android:text="Sign In"
         android:textAllCaps="false" />
@@ -110,7 +111,7 @@
 -->
 
 
-    <Button
+   <!-- <Button
         android:id="@+id/idVisitor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -121,6 +122,6 @@
         android:backgroundTint="@color/blueGreen"
         android:text="Continue as Visitor"
         android:textAllCaps="false" />
-
+-->
 
 </RelativeLayout>

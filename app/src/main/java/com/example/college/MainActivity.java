@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         userId=findViewById(R.id.idEdtUserName);
         password = findViewById(R.id.idEdtPassword);
         signIn=findViewById(R.id.idBtnLogin);
-        visitor=findViewById(R.id.idVisitor);
+        //visitor=findViewById(R.id.idVisitor);
         create =findViewById(R.id.create);
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),SignUp.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
             }
         });
 

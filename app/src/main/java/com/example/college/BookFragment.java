@@ -39,9 +39,10 @@ public class BookFragment extends Fragment {
     View rootView;
     Context context;
     final Calendar myCalendar= Calendar.getInstance();
-    EditText editDate,name,lname,contact,age,dept,whomToMeet,purpose,userType;
+    EditText editDate,name,lname,/*contact*/age,whomToMeet,purpose,userType;
     Button book;
     String date ,department;
+    StorageHelper storageHelper;
 
     public BookFragment() {
         // Required empty public constructor
@@ -60,23 +61,28 @@ public class BookFragment extends Fragment {
 
         rootView = inflater.inflate(R.layout.fragment_book, container, false);
         context = rootView.getContext();
+        storageHelper = new StorageHelper(context);
         Spinner spinner=rootView.findViewById(R.id.spinner);
-
-
 
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(context, R.array.department, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
         spinner.setAdapter(adapter);
-         department = spinner.getSelectedItem().toString();
 
-       /* spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                department=  spinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString();
+                //Toast.makeText(context,department,Toast.LENGTH_LONG).show();
             }
-        });*/
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                // DO Nothing here
+            }
+        });
 
 
 
@@ -85,8 +91,8 @@ public class BookFragment extends Fragment {
         name=(EditText) rootView.findViewById(R.id.idEdtName);
         lname=(EditText) rootView.findViewById(R.id.idLname);
         age=(EditText) rootView.findViewById(R.id.idEdtAge);
-        contact=(EditText) rootView.findViewById(R.id.idEdtMobile);
-        dept=(EditText) rootView.findViewById(R.id.idEdtDate);
+        //contact=(EditText) rootView.findViewById(R.id.idEdtMobile);
+
         whomToMeet=(EditText) rootView.findViewById(R.id.idEdtWhom);
         purpose=(EditText) rootView.findViewById(R.id.idEdtPurpose);
         userType=(EditText) rootView.findViewById(R.id.idEdtType);
@@ -134,17 +140,19 @@ public class BookFragment extends Fragment {
 
 
     public  void bookNow(){
-        if(name.getText().toString().isEmpty()||lname.getText().toString().isEmpty()||contact.getText().toString().isEmpty()||age.getText().toString().isEmpty()||department.isEmpty()||whomToMeet.getText().toString().isEmpty()||purpose.getText().toString().isEmpty()||userType.getText().toString().isEmpty()||date.isEmpty()){
+        if(name.getText().toString().isEmpty()||lname.getText().toString().isEmpty()||/*contact.getText().toString().isEmpty()||*/age.getText().toString().isEmpty()||department.isEmpty()||whomToMeet.getText().toString().isEmpty()||purpose.getText().toString().isEmpty()||userType.getText().toString().isEmpty()||date.isEmpty()){
             Toast.makeText(context,"Please fill all the forms",Toast.LENGTH_SHORT).show();
 
         }
+
         else  if(department.equals("Select Department")){
+            Log.i("Response",department);
 
             Toast.makeText(context,"Please select the department",Toast.LENGTH_SHORT).show();
 
         }
         else {
-
+            Log.i("Response",department);
 
             String url = Const.URL+"create";
             RequestQueue requestQueue = Volley.newRequestQueue(context);
@@ -153,7 +161,7 @@ public class BookFragment extends Fragment {
             postData.put("LastName",lname.getText().toString());
             postData.put("FirstName", name.getText().toString());
             postData.put("Age", age.getText().toString());
-            postData.put("Contact", contact.getText().toString());
+            postData.put("Contact", storageHelper.getUserNumber());
             postData.put("Department", department);
             postData.put("whoAreYou", userType.getText().toString());
             postData.put("whomToVisit", whomToMeet.getText().toString());
@@ -184,8 +192,8 @@ public class BookFragment extends Fragment {
                                             name.setText("");
                                             lname.setText("");
                                             age.setText("");
-                                            contact.setText("");
-                                            dept.setText("Select Department");
+                                            //contact.setText("");
+                                            department="Select Department";
                                             userType.setText("");
                                             whomToMeet.setText("");
                                             purpose.setText("");
