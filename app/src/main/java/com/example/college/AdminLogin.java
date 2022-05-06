@@ -54,16 +54,25 @@ public class AdminLogin extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(),AdminHome.class);
             i.putExtra("admin","faculty");
             startActivity(i);
+            username.setText("");
+            password.setText("");
         }
         else if(username.getText().toString().equals("office")||password.getText().toString().equals("o123")&&type.equals("office")){
             Intent i = new Intent(getApplicationContext(),AdminHome.class);
             i.putExtra("admin","office");
             startActivity(i);
+            username.setText("");
+            password.setText("");
         }
         else if(username.getText().toString().equals("hostel")||password.getText().toString().equals("h123")&&type.equals("hostel")){
             Intent i = new Intent(getApplicationContext(),AdminHome.class);
             i.putExtra("admin","hostel");
             startActivity(i);
+            username.setText("");
+            password.setText("");
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"Please select proper department or check your credentials",Toast.LENGTH_SHORT).show();
         }
     }
 

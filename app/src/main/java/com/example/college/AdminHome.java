@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ParseException;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,20 +34,22 @@ public class AdminHome extends AppCompatActivity {
     ArrayList<AppointList> list;
     AppointsAdapter adapter;
     JSONArray users;
+    String admin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
 
+        admin = getIntent().getStringExtra("admin");
         recyclerView = findViewById(R.id.recyclerAppoints);
         list = new ArrayList<>();
-        getExplore();
+        getAppointments();
     }
 
 
-    public void getExplore(){
+    public void getAppointments(){
+        findViewById(R.id.loadingPanell).setVisibility(View.VISIBLE);
         String Url =Const.URL+"appointments";
-
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Url,
                 new Response.Listener<String>() {
                     @Override
@@ -63,6 +68,7 @@ public class AdminHome extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jo = jsonArray.getJSONObject(i);
 
+                                if(jo.optString("Department").equals(admin)){
 
                                 list.add(new AppointList(
                                         jo.optString("Personid"),
@@ -78,6 +84,7 @@ public class AdminHome extends AppCompatActivity {
                                         jo.optString("Contact")
                                 ));
 
+                                }
                             }
 
                             adapter = new AppointsAdapter(AdminHome.this,list);
@@ -88,7 +95,6 @@ public class AdminHome extends AppCompatActivity {
                         }
                         catch (Exception e) {
                             Log.i("Response",e.toString());
-
                             e.printStackTrace();
 
                         }
@@ -97,9 +103,7 @@ public class AdminHome extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                         Log.i("Response",error.toString());
-
                         Toast.makeText(AdminHome.this,"Server Down,Please wait",Toast.LENGTH_SHORT).show();
                     }
 
@@ -111,5 +115,26 @@ public class AdminHome extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(AdminHome.this);
         requestQueue.add(stringRequest);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(AdminHome.this)
+                .setTitle("Exit..?")
+                .setMessage("Want to exit form admin panel.?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(getApplicationContext(),SelectDept.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
+                        dialog.dismiss();
+                        // Continue with delete operation
+                    }
+                })
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(getResources().getDrawable(R.drawable.ic_baseline_warning_24))
+                .setCancelable(false)
+                .show();
     }
 }

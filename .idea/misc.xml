@@ -4,22 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../Library/Android/sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.4036458333333333" />
-        <entry key="..\:/Users/Sringesh/Desktop/college/app/src/main/res/layout/activity_admin_home.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/Sringesh/Desktop/college/app/src/main/res/layout/activity_admin_login.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/Sringesh/Desktop/college/app/src/main/res/layout/activity_main.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/Sringesh/Desktop/college/app/src/main/res/layout/activity_select_dept.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/Sringesh/Desktop/college/app/src/main/res/layout/activity_splash.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/Sringesh/Desktop/college/app/src/main/res/layout/appoints_layout.xml" value="0.1" />
-        <entry key="..\:/Users/Sringesh/Desktop/college/app/src/main/res/layout/visits_layout.xml" value="0.16032608695652173" />
         <entry key="app/src/main/res/drawable/border.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/scale.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/spinner_row.xml" value="0.2455" />
+        <entry key="app/src/main/res/layout/activity_admin_home.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.2921875" />
+        <entry key="app/src/main/res/layout/appoints_layout.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/fragment_book.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_visit.xml" value="0.4036458333333333" />

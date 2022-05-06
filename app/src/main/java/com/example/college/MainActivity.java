@@ -97,8 +97,6 @@ public class MainActivity extends AppCompatActivity {
             postData.put("Contact",userId.getText().toString());
            // postData.put("Password", password.getText().toString());
 
-
-
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url,new JSONObject(postData), new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
