@@ -91,7 +91,7 @@ public class VisitAdapter extends RecyclerView.Adapter<VisitAdapter.ViewHolder>{
         holder.textview5.setText("Whom to Meet :    "+profileDataList.get(position).getWhomToVisit() + "");
 
         if(profileDataList.get(position).getStatusCode().equals("1")){
-            holder.textview6.setText( "Wow.! Your appointment is Successfully Scheduled");
+            holder.textview6.setText( "Wow.! Your appointment is Scheduled");
         }
         else if (profileDataList.get(position).getStatusCode().equals("2")){
             holder.textview6.setText( "Soory.! Your Appointment is Rejected");
