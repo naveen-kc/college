@@ -84,11 +84,11 @@ public class VisitAdapter extends RecyclerView.Adapter<VisitAdapter.ViewHolder>{
         }
 
          //Product product = profileDataList.get(position);
-        holder.textView.setText("First Name:"+profileDataList.get(position).getName() + "");
-        holder.textview2.setText("Last Name:"+profileDataList.get(position).getLname() + "");
-        holder.textview3.setText("Purpose :"+profileDataList.get(position).getPuspose() + "");
-        holder.textview4.setText("Date:"+profileDataList.get(position).getWhenToVisit() + "");
-        holder.textview5.setText("Whom to Meet:"+profileDataList.get(position).getWhomToVisit() + "");
+        holder.textView.setText("First Name :       "+profileDataList.get(position).getName() + "");
+        holder.textview2.setText("Last Name :       "+profileDataList.get(position).getLname() + "");
+        holder.textview3.setText("Purpose of visit: "+profileDataList.get(position).getPuspose() + "");
+        holder.textview4.setText("Date :            "+profileDataList.get(position).getWhenToVisit() + "");
+        holder.textview5.setText("Whom to Meet :    "+profileDataList.get(position).getWhomToVisit() + "");
 
         if(profileDataList.get(position).getStatusCode().equals("1")){
             holder.textview6.setText( "Wow.! Your appointment is Successfully Scheduled");

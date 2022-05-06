@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relative"
@@ -19,25 +19,33 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/Bluee"
+        card_view:cardElevation="7dp"
+        card_view:contentPadding="7dp"
+        card_view:cardCornerRadius="7dp"
+        card_view:cardMaxElevation="7dp">
 
         <TextView
             android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:gravity="start"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+             />
 
         <TextView
             android:id="@+id/Lname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:gravity="center"
-            android:textSize="12sp"
+            android:layout_marginTop="30dp"
+            android:gravity="start"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             />
 
 
@@ -47,9 +55,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="55dp"
-            android:gravity="center"
-            android:textSize="12sp"
+            android:gravity="start"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             />
 
 
@@ -57,32 +66,38 @@
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="85dp"
-            android:gravity="center"
-            android:textSize="12sp"
+            android:layout_marginTop="80dp"
+            android:gravity="start"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             />
 
         <TextView
             android:id="@+id/whom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="115dp"
-            android:gravity="center"
-            android:textSize="12sp"
+            android:layout_marginTop="107dp"
+            android:gravity="start"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             />
 
         <TextView
             android:id="@+id/status"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="22dp"
             android:layout_marginTop="135dp"
             android:gravity="center"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
+
+            android:background="@drawable/text_border"
+
             />
 
 
     </androidx.cardview.widget.CardView>
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

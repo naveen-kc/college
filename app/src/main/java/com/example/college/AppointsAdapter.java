@@ -53,7 +53,7 @@ public class AppointsAdapter extends RecyclerView.Adapter<AppointsAdapter.ViewHo
         public TextView textview2;
         public TextView textview3;
         public TextView textview4;
-        public TextView textview5,status;
+        public TextView textview5,textview6,status;
         public View maincardd;
         Button accept,reject;
         LinearLayout buttons;
@@ -68,6 +68,7 @@ public class AppointsAdapter extends RecyclerView.Adapter<AppointsAdapter.ViewHo
             textview3=(TextView) v.findViewById(R.id.purpose);
             textview4=(TextView)v.findViewById(R.id.date);
             textview5=(TextView)v.findViewById(R.id.whom);
+            textview6=(TextView)v.findViewById(R.id.who);
             status=(TextView)v.findViewById(R.id.status);
             accept=(Button)v.findViewById(R.id.accept);
             reject=(Button)v.findViewById(R.id.reject);
@@ -91,23 +92,24 @@ public class AppointsAdapter extends RecyclerView.Adapter<AppointsAdapter.ViewHo
     public void onBindViewHolder(@NonNull AppointsAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         final AppointList profileData = profileDataList.get(position);
 
-        holder.textView.setText("First Name :"+profileDataList.get(position).getFname() + "");
-        holder.textview2.setText("Last Name :"+profileDataList.get(position).getLname() + "");
-        holder.textview3.setText("Whom to meet :"+profileDataList.get(position).getWhom() + "");
-        holder.textview4.setText("Purpose :"+profileDataList.get(position).getPurpose() + "");
-        holder.textview5.setText("Date :"+profileDataList.get(position).getDate() + "");
+        holder.textView.setText("First Name :       "+profileDataList.get(position).getFname() + "");
+        holder.textview2.setText("Last Name :       "+profileDataList.get(position).getLname() + "");
+        holder.textview3.setText("Whom to meet :    "+profileDataList.get(position).getWhom() + "");
+        holder.textview4.setText("Purpose of visit :"+profileDataList.get(position).getPurpose() + "");
+        holder.textview5.setText("Date of visit :   "+profileDataList.get(position).getDate() + "");
+        holder.textview6.setText("Who is he :       "+profileDataList.get(position).getWho() + "");
 
         if(profileDataList.get(position).getStatus().equals("1")){
             holder.buttons.setVisibility(View.GONE);
             holder.status.setVisibility(View.VISIBLE);
             holder.status.setText("This appoint has been accepted");
-            holder.status.setTextColor(Color.GREEN);
+            //holder.status.setTextColor(Color.GREEN);
         }
         else if(profileDataList.get(position).getStatus().equals("2")){
             holder.buttons.setVisibility(View.GONE);
             holder.status.setVisibility(View.VISIBLE);
             holder.status.setText("This appoint has been rejected");
-            holder.status.setTextColor(Color.RED);
+           // holder.status.setTextColor(Color.RED);
         }
         else {
             holder.buttons.setVisibility(View.VISIBLE);
