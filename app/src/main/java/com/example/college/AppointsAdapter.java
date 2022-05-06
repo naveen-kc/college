@@ -91,11 +91,11 @@ public class AppointsAdapter extends RecyclerView.Adapter<AppointsAdapter.ViewHo
     public void onBindViewHolder(@NonNull AppointsAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         final AppointList profileData = profileDataList.get(position);
 
-        holder.textView.setText(profileDataList.get(position).getFname() + "");
-        holder.textview2.setText(profileDataList.get(position).getLname() + "");
-        holder.textview3.setText(profileDataList.get(position).getWhom() + "");
-        holder.textview4.setText(profileDataList.get(position).getPurpose() + "");
-        holder.textview5.setText(profileDataList.get(position).getDate() + "");
+        holder.textView.setText("First Name :"+profileDataList.get(position).getFname() + "");
+        holder.textview2.setText("Last Name :"+profileDataList.get(position).getLname() + "");
+        holder.textview3.setText("Whom to meet :"+profileDataList.get(position).getWhom() + "");
+        holder.textview4.setText("Purpose :"+profileDataList.get(position).getPurpose() + "");
+        holder.textview5.setText("Date :"+profileDataList.get(position).getDate() + "");
 
         if(profileDataList.get(position).getStatus().equals("1")){
             holder.buttons.setVisibility(View.GONE);
