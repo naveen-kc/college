@@ -14,8 +14,8 @@
         android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/clg"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        android:src="@drawable/icon" />
 
 
     <TextView

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,12 +59,28 @@ public class VisitFragment extends Fragment {
         context = rootView.getContext();
 
 
+        SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)rootView.findViewById(R.id.refreshLayoutt);
         recyclerView = rootView.findViewById(R.id.recycler);
         list = new ArrayList<>();
         loading = rootView.findViewById(R.id.loadingPanel);
         noData=rootView.findViewById(R.id.noData);
         storageHelper = new StorageHelper(context);
         getVisits();
+
+
+
+        // Refresh  the layout
+        swipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+
+                        getVisits();
+
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }
+        );
 
         return rootView;
     }

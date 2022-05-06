@@ -24,7 +24,6 @@
     </TextView>
 
 
-
     <RelativeLayout
         android:id="@+id/loadingPanell"
         android:layout_width="match_parent"
@@ -55,6 +54,13 @@
 
         />
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view2">
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAppoints"
         android:layout_width="match_parent"
@@ -63,8 +69,7 @@
         android:orientation="vertical"
         android:scrollbars="vertical"
         android:layout_marginTop="5dp"
-
-
         />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

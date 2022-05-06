@@ -3,6 +3,7 @@ package com.example.college;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,6 +12,7 @@ import android.net.ParseException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -42,8 +44,22 @@ public class AdminHome extends AppCompatActivity {
 
         admin = getIntent().getStringExtra("admin");
         recyclerView = findViewById(R.id.recyclerAppoints);
+        SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.refreshLayout);
         list = new ArrayList<>();
         getAppointments();
+
+        // Refresh  the layout
+        swipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+
+                        getAppointments();
+
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }
+        );
     }
 
 

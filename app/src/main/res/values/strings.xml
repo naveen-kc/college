@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">college</string>
+    <string name="app_name">Visitor Management</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="department">
         <item>Select Department</item>
-        <item>Office</item>
-        <item>Faculty</item>
-        <item>Hostel</item>
+        <item>office</item>
+        <item>faculty</item>
+        <item>hostel</item>
     </string-array>
 </resources>
